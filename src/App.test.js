@@ -29,7 +29,7 @@ test("should render counter diaplay", () => {
   expect(ctrDisplay.length).toBe(1);
 });
 
-test("should render counter", () => {
+test("counter start at 0", () => {
   const wrapper = shallow(<App />);
   const counter = wrapper.find("[data-test='counter']").text();
   expect(counter).toBe("0");
