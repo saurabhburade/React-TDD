@@ -12,8 +12,25 @@ test("renders non-empty component without crashing", () => {
   expect(wrapper.exists()).toBe(true);
 });
 
+// test("should render inrement button", () => {
+//   const wrapper = shallow(<App />);
+//   const btnComponent = wrapper.find("button");
+//   expect(btnComponent.length).toBe(1);
+// });
+
 test("should render inrement button", () => {
   const wrapper = shallow(<App />);
-  const btnComponent = wrapper.find("button");
+  const btnComponent = wrapper.find("[data-test='increment-button']");
   expect(btnComponent.length).toBe(1);
+});
+test("should render counter diaplay", () => {
+  const wrapper = shallow(<App />);
+  const ctrDisplay = wrapper.find("[data-test='counter-diaplay']");
+  expect(ctrDisplay.length).toBe(1);
+});
+
+test("should render counter", () => {
+  const wrapper = shallow(<App />);
+  const counter = wrapper.find("[data-test='counter']").text();
+  expect(counter).toBe("0");
 });

@@ -9,8 +9,12 @@ function App() {
   };
   return (
     <div className="App">
-      <h1>Count : {counter}</h1>
-      <button onClick={handleIncrement}>Increment</button>
+      <h1 data-test="counter-diaplay">
+        Count : <span data-test="counter">{counter}</span>
+      </h1>
+      <button onClick={handleIncrement} data-test="increment-button">
+        Increment
+      </button>
     </div>
   );
 }
