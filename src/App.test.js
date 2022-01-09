@@ -10,5 +10,10 @@ test("renders non-empty component without crashing", () => {
   // console.log(wrapper.debug()); // logs intenal code
   // ASSERTIONS
   expect(wrapper.exists()).toBe(true);
+});
 
+test("should render inrement button", () => {
+  const wrapper = shallow(<App />);
+  const btnComponent = wrapper.find("button");
+  expect(btnComponent.length).toBe(1);
 });
