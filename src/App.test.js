@@ -34,3 +34,16 @@ test("counter start at 0", () => {
   const counter = wrapper.find("[data-test='counter']").text();
   expect(counter).toBe("0");
 });
+
+test("simulate click increments counter", () => {
+  const wrapper = shallow(<App />);
+  const btnComponent = wrapper.find("[data-test='increment-button']");
+
+  // click button
+  btnComponent.simulate("click");
+
+  // Check for incremented counter
+  const counter = wrapper.find("[data-test='counter']").text();
+  expect(counter).toBe("1");
+
+});
